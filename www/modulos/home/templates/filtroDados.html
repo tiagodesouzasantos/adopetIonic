@@ -1,0 +1,110 @@
+<md-dialog flex-xs flex-gt-xs="50" ng-controller="HomeCtrl" aria-label="Filtrar Busca">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Filtrar Busca</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+
+        <h1 class="md-title">Escolha as opções desejadas</h1>        
+        <div layout="row">
+            <!-- <div > -->
+
+                <md-input-container flex>
+                    <label>Tipo</label>
+                    <md-select ng-model="selectedTipos"
+                               md-on-close="clearSearchTerm()"
+                               data-md-container-class="selectdemoSelectHeader"
+                               multiple>
+                      <md-select-header class="demo-select-header">
+                        <input ng-model="searchTerm"
+                               type="search"
+                               placeholder="Buscar tipos.."
+                               class="demo-header-searchbox md-text">
+                      </md-select-header>
+                      <md-optgroup label="tipos">
+                        <md-option ng-value="tipo" ng-repeat="tipo in tipos |
+                          filter:searchTerm">{{tipo}}</md-option>
+                      </md-optgroup>
+                    </md-select>
+                </md-input-container>
+
+
+                <md-input-container flex>
+                    <label>Raças</label>
+                    <md-select ng-model="selectedRacas"
+                               md-on-close="clearSearchTerm()"
+                               data-md-container-class="selectdemoSelectHeader"
+                               multiple>
+                      <md-select-header class="demo-select-header">
+                        <input ng-model="searchTerm"
+                               type="search"
+                               placeholder="Buscar raças.."
+                               class="demo-header-searchbox md-text">
+                      </md-select-header>
+                      <md-optgroup label="racas">
+                        <md-option ng-value="raca" ng-repeat="raca in racas |
+                          filter:searchTerm">{{raca}}</md-option>
+                      </md-optgroup>
+                    </md-select>
+                </md-input-container>
+            <!-- </div> -->
+            <!-- <div flex> -->
+            
+                <md-input-container flex>
+                    <label>Cor</label>
+                    <md-select ng-model="selectedCores"
+                               md-on-close="clearSearchTerm()"
+                               data-md-container-class="selectdemoSelectHeader"
+                               multiple>
+                      <md-select-header class="demo-select-header">
+                        <input ng-model="searchTerm"
+                               type="search"
+                               placeholder="Buscar cores.."
+                               class="demo-header-searchbox md-text">
+                      </md-select-header>
+                      <md-optgroup label="cores">
+                        <md-option ng-value="cor" ng-repeat="cor in cores |
+                          filter:searchTerm">{{cor}}</md-option>
+                      </md-optgroup>
+                    </md-select>
+                </md-input-container>
+            <!-- </div> -->
+        </div>
+
+        <h1 class="md-title">Distância</h1>        
+        <div layout="row">
+            <md-slider-container flex>
+              <md-slider flex ng-model="distancia" min="0" max="100" aria-label="blue" id="blue-slider" class="md-primary">
+              </md-slider>
+              <md-input-container>
+                <input flex type="number" ng-model="distancia" aria-label="blue" aria-controls="blue-slider">
+              </md-input-container>
+            </md-slider-container>
+
+
+
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+    <!--   <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+        More on Wikipedia
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="answer('not useful')">
+       Not Useful
+      </md-button> -->
+      <md-button ng-click="buscar('useful')">
+        Buscar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,77 @@
+<style>
+.card-media {
+  background-color: #999999; }
+</style>
+<div ng-cloak>
+  <md-content>
+
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Adoção">
+        <md-content  layout="row"  flex layout-wrap>
+			
+			<div ng-repeat="post in $root.meusPets.adocao" flex="50" flex-xs="100">
+			  <md-card ng-click="goTo('meusPets.detalhesAdocao',post)">
+			    <md-card-title>
+			      <md-card-title-text>
+			        <span class="md-headline">{{post.title}}</span>
+			        <span class="md-subhead">Small</span>
+			      </md-card-title-text>
+			      <md-card-title-media>
+			        <div class="md-media-sm card-media">
+						<img ng-src="{{post.url_img}}" class="md-media-sm" alt="Washed Out">
+			        </div>
+			      </md-card-title-media>
+			    </md-card-title>
+			    <!-- <md-card-actions layout="row" layout-align="end center">
+			      <md-button>Action 1</md-button>
+			      <md-button>Action 2</md-button>
+			    </md-card-actions> -->
+			  </md-card>
+			</div>
+		     
+			<!-- 	<div flex="50" flex-xs="100">
+			      <md-card  >
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with image</span>
+			            <span class="md-subhead">Small</span>
+			          </md-card-title-text>
+			          <md-card-title-media>
+			            <div class="md-media-sm card-media"></div>
+			          </md-card-title-media>
+			        </md-card-title>
+			        <md-card-actions layout="row" layout-align="end center">
+			          <md-button>Action 1</md-button>
+			          <md-button>Action 2</md-button>
+			        </md-card-actions>
+			      </md-card>
+		      </div>
+				<div flex="50" flex-xs="100">
+			      <md-card >
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with image</span>
+			            <span class="md-subhead">Small</span>
+			          </md-card-title-text>
+			          <md-card-title-media>
+			            <div class="md-media-sm card-media"></div>
+			          </md-card-title-media>
+			        </md-card-title>
+			        <md-card-actions layout="row" layout-align="end center">
+			          <md-button>Action 1</md-button>
+			          <md-button>Action 2</md-button>
+			        </md-card-actions>
+			      </md-card>
+		      </div> -->
+
+          
+        </md-content>
+      </md-tab>
+      <md-tab label="Favoritos">
+        <md-content class="md-padding">
+          
+        </md-content>
+      </md-tab>
+      
+  </md-content>
+</div>

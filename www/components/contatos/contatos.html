@@ -1,0 +1,24 @@
+<div ng-cloak>
+	<md-content>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<!-- Clientes -->
+			<md-tab label="clientes">
+				<md-content class="md-padding">
+					<div ng-include="'components/contatos/tabs/clientes.html'"></div>
+				</md-content>
+			</md-tab>
+			<!-- Assintantes -->
+			<md-tab label="assinantes">
+				<md-content class="md-padding">
+					<div ng-include="'components/contatos/tabs/assinantes.html'"></div> 
+				</md-content>
+			</md-tab>
+			<!-- Vendedores -->
+			<md-tab label="vendedores">
+				<md-content class="md-padding">
+					<div ng-include="'components/contatos/tabs/vendedores.html'"></div>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-content>
+</div>

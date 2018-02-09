@@ -1,0 +1,25 @@
+.fadeOut {
+   opacity: 0;
+   transition: opacity .95s ease-in-out;
+   -moz-transition: opacity .95s ease-in-out;
+   -webkit-transition: opacity .95s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+	pointer-events: none;
+
+}
+
+
+.fadeOut {
+	
+}
+
+.teste{
+	/*position: absolute;*/
+	width: 100% !important;
+	background-repeat: no-repeat;
+	clear: both;
+	height: 300px !important;
+}

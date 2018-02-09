@@ -1,0 +1,125 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>AdoPet</title>
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="modulos/menu/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/google/autocomplete.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/google/autocomplete/autocomplete.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxZxRVPABqPNWlH7sd484fK5FHmgkPnn0&libraries=places&v=3&language=pt_BR&region=BR"></script>
+     <link rel="stylesheet" type="text/css" href="modulos/home/css/home.css">
+</head>
+
+<body ng-app="adopet" ng-cloak>
+    <!-- ToolbarFixed -->
+    <md-toolbar md-scroll-shrink ng-controller="toolbarController">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
+                <i class="material-icons">menu</i>
+            </md-button>
+            <h3 flex md-truncate class="roboto-bold">
+                <span>{{title}}</span>
+            </h3>
+            <md-button class="md-icon-button" aria-label="menu" ng-click="$root.abrirFiltro($event)">
+                <i class="material-icons">filter_list</i>
+            </md-button>
+
+        </div>
+    </md-toolbar>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" id="menu">
+        <md-toolbar class="md-theme-indigo header-menu" ng-controller="menuController" layout="column" layout-align="end start">
+            <img class="img-circle" ng-src="{{usuario.imgPerfil}}">
+            <div layout="column" layout-align="space-around start">
+                <p>{{usuario.nome}}</p>
+                <p class="email">{{usuario.email}}</p>
+            </div>
+        </md-toolbar>
+        <md-content layout-margin ng-controller="toolbarController" class="espacos-menu">
+            <md-list-item class="md-1-line" ng-click="goTo('inicio')">
+                <i class="material-icons">home</i>
+                <p> Inicio</p>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="goTo('user')">
+                <i class="material-icons">account_circle</i>
+                <p> Dados pessoais</p>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="goTo('meusPets')">
+                <i class="material-icons">pets</i>
+                <p>Meus Pets</p>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="null">
+                <i class="material-icons">pets</i>
+                <p>Cadastro adoção</p>
+                <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="null">
+                <i class="material-icons">shopping_cart</i>
+                <p>PetGadget</p>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="null">
+                <i class="material-icons">group_work</i>
+                <p>ONG's</p>
+            </md-list-item>
+            <md-list-item class="md-1-line" ng-click="toggleLeft()">
+                <i class="material-icons">exit_to_app</i>
+                <p>Sair</p>
+            </md-list-item>
+
+        </md-content>
+    </md-sidenav>
+
+    <!-- All Content Above -->
+    <md-content ui-view="content">
+    </md-content>
+
+    <!-- </section> -->
+    <!-- Angular Stuffs-->
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/angular-ui/angular-ui-route.js"></script>
+    <script src="assets/libs/angular-animate/angular-animate.js"></script>
+    <script src="assets/libs/angular/1.5.5/angular-aria.min.js"></script>
+    <script src="assets/libs/angular/1.5.5/angular-messages.min.js"></script>
+    <script src="assets/libs/google/autocomplete/autocomplete.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="assets/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <!-- main / config -->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/config/config.js"></script>
+
+    <!-- mains  -->
+    <!-- <script src="assets/js/controllers/main.js"></script>
+    <script src="assets/js/directives/main.js"></script>
+    <script src="assets/js/services/main.js"></script> -->
+
+    <!-- controllers -->
+    <script src="modulos/toolbar/js/toolbarController.js"></script>
+    <script src="modulos/menu/js/menuController.js"></script>
+    <script src="modulos/home/js/homeController.js"></script>
+    <script src="modulos/usuario/js/userController.js"></script>
+    <script src="modulos/meusPets/js/meusPetsController.js"></script>
+    
+    <script src="modulos/home/js/filtroDadosService.js"></script>
+    <!-- directives -->
+    <!-- <script src="assets/js/directives/googleDirective.js"></script> -->
+
+    <!-- services -->
+    <script src="modulos/usuario/js/userService.js"></script>
+    <script src="modulos/_app/js/services/dbMethodsService.js"></script>
+    <script src="modulos/_app/js/services/urlMapsService.js"></script>
+    <script src="modulos/_app/js/services/alertsService.js"></script>
+    <script src="modulos/_app/js/services/deviceService.js"></script>
+    <script src="modulos/home/js/jsonModelService.js"></script>
+
+
+</body>
+
+</html>

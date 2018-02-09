@@ -1,0 +1,85 @@
+<div layout="column" ng-cloak>
+    <md-content layout-padding>
+        <form name="userForm" ng-submit="userForm.$valid && saveData()" novalidate>
+            <md-input-container class="md-block">
+                <label>Nome completo</label>
+                <input md-maxlength="50" required md-no-asterisk id="name" name="name" ng-model="userCad.name">
+                <div ng-messages="userForm.name.$error">
+                    <div ng-message="required">Campo obrigatório.</div>
+                    <div ng-message="md-maxlength">Digite seu nome completo (Até 50 caracteres)</div>
+                </div>
+            </md-input-container>
+
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>Telefone</label>
+                    <input name="tel" ng-model="userCad.tel" ng-pattern="/^[(][0-9]{2}[)][0-9]{4}-[0-9]{4}$/" />
+
+                    <div class="hint" ng-show="showHints">(00)0000-0000</div>
+
+                    <div ng-messages="userForm.tel.$error" ng-hide="showHints">
+                        <div ng-message="pattern">(00)0000-0000 - Digite um telefone válido!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Celular</label>
+                    <input name="cel" ng-model="userCad.cel" ng-pattern="/^[(][0-9]{2}[)][0-9]{5}-[0-9]{4}$/" />
+
+                    <div class="hint" ng-show="showHints">(00)00000-0000</div>
+
+                    <div ng-messages="userForm.cel.$error" ng-hide="showHints">
+                        <div ng-message="pattern">(00)00000-0000 - Digite um celular válido!</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <md-input-container class="md-block">
+                <label>Endereço</label>
+                <input required id="address" ng-model="userCad.address.address" g-places-autocomplete>
+                <!-- <div class="hint" ng-show="showHints">(00) 00000-0000</div> -->
+
+                <div ng-messages="userForm.address.address.$error" ng-hide="showHints">
+                    <div ng-message="pattern">Av/Rua exemplo, 123, São Paulo-SP ( Digite o endereço no formato citado)</div>
+                </div>
+            </md-input-container>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label>E-mail</label>
+                    <input required type="email" name="email" ng-model="userCad.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+                    <div ng-messages="userForm.email.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Digite um e-mail valido!(O e-mail deve conter entre 10 a 100 caracteres).
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Senha</label>
+
+                    <input required type="password" name="password" ng-model="userCad.password" minlength="4" maxlength="20" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[0-9]).{4,20}$/" />
+
+
+                    <div ng-messages="userForm.password.$error" role="alert">
+                        <div ng-message-exp="['required', 'pattern']">
+                            Sua senha deve conter letras e numeros.
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <md-switch class="md-primary" name="donor" ng-model="userCad.donor">
+                    Deseja ser um doador de pets?
+                </md-switch>
+                <!-- <div ng-messages="userForm.donor.$error" multiple>
+                    <div ng-message="required">
+                        Você poderá publicar pets para adoção.
+                    </div>
+                </div> -->
+            </md-input-container>
+            <div>
+                <md-button type="submit">Salvar dados</md-button>
+            </div>
+        </form>
+    </md-content>
+
+</div>

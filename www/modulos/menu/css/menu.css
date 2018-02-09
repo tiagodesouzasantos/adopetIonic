@@ -1,0 +1,86 @@
+.menu-itens {
+    padding: 0px 5px 0px 5px;
+}
+
+.header-menu {
+    height: 150px;
+    background: url('../../media/background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#menu .header-menu p {
+    padding: 0px 10px 0px 15px;
+    font-weight: 800;
+    font-size: 15px;
+    margin: 0;
+    text-shadow: 0.5px 0.5px #000000;
+}
+
+#menu .header-menu div {
+    margin-bottom: 8px;
+}
+
+#menu .header-menu .email {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#menu p {
+    padding: 0px 10px 0px 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+#menu .img-circle {
+    border-radius: 50%;
+    width: 65px;
+    margin: 15px;
+    margin-bottom: 25px;
+}
+
+#menu .material-icons {
+    color: gray;
+}
+
+#menu .espacos-menu {
+    margin: 8px;
+    margin-left: 0!important;
+    margin-top: 4px!important;
+    margin-right: 0!important;
+}
+
+#menu md-list-item {
+    margin: 8px;
+    margin-left: 0!important;
+    margin-top: 4px!important;
+    margin-right: 0!important;
+}
+
+#menu-top md-toolbar {
+    background: url('/assets/media/background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.divide-menu {
+    border-bottom: rgba(0, 0, 0, 0.13) 1px solid;
+    width: 97%;
+}
+
+.red-icon {
+    color:red;
+}
+.yellow-icon {
+    color:yellow;
+}
+.white-icon {
+    color:white;
+}
+/** 
+
+    background: url('assets/media/background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 150px;
+
+    **/

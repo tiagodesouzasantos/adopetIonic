@@ -1,0 +1,89 @@
+<style>
+.card-media {
+  background-color: #999999; }
+</style>
+<div ng-cloak>
+  <md-content>
+  
+  	<md-button ng-click="goTo('meusPets')">Voltar</md-button>
+
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Detalhes">
+        <md-content  layout="row"  flex layout-wrap>
+			
+			hahahahahah
+
+          
+        </md-content>
+      </md-tab>
+      <md-tab label="Chat">
+        <md-content  layout="row"  flex layout-wrap>
+			
+			wwwwwww
+
+          
+        </md-content>
+      </md-tab>
+      
+  </md-content>
+</div>
+
+
+<md-content class="md-padding" layout="row"  layout-align="center center">
+      <div flex-xs flex-gt-xs="50" layout="column">
+
+      <md-card>
+        <md-card-header class="teste" md-swipe-right="swiperImgs('right')" md-swipe-left="swiperImgs('left')" >
+                <md-card-header ng-class="{'fadeIn':testew==0}" id="img1"  style=" height:200px ;background-image: url('{{postTarget.arrImgs[0]}}')" class="md-card-image fadeOut" alt="Washed Out"></md-card-header>
+
+              <md-card-header ng-class="{'fadeIn':testew==1}" id="img1"  style=" height:200px ;background-image: url('{{postTarget.arrImgs[1]}}')" class="md-card-image fadeOut" alt="Washed Out"></md-card-header>
+
+              <md-card-header ng-class="{'fadeIn':testew==2}" id="img1"  style=" height:200px ;background-image: url('{{postTarget.arrImgs[2]}}')" class="md-card-image fadeOut" alt="Washed Out"></md-card-header>
+          </md-card-header>
+        <!-- 
+          <md-card-header ng-class="{'fadeIn':testew==0}" id="img1"  md-swipe-right="swiperImgs('right')" md-swipe-left="swiperImgs('left')" style="background-size: contain; height:200px ;background-image: url('{{postTarget.arrImgs[0]}}')" class="md-card-image fadeOut" alt="Washed Out">
+
+
+          </md-card-header>
+          
+          <md-card-header ng-class="{'fadeIn':testew==1}" id="img2"  md-swipe-right="swiperImgs('right')" md-swipe-left="swiperImgs('left')" style="background-size: contain; height:200px ;background-image: url('{{postTarget.arrImgs[1]}}')" class="md-card-image fadeOut" alt="Washed Out">
+          </md-card-header>
+
+          <md-card-header ng-class="{'fadeIn':testew==2}" id="img3"  md-swipe-right="swiperImgs('right')" md-swipe-left="swiperImgs('left')" style="background-size: contain; height:200px ;background-image: url('{{postTarget.arrImgs[2]}}')" class="md-card-image fadeOut" alt="Washed Out">
+          
+          <!-- <img  md-swipe-left="onSwipeLeft()"  ng-src="{{postTarget.urlImg}}" class="md-card-image" alt="Washed Out"> -->
+          <!-- </md-card-header> -->
+          {{testew+1}}/{{postTarget.arrImgs.length}} -->
+
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{postTarget.title}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-card-icon-actions style="background-color: #001086">
+            <md-button ng-click="confirmarAdocao($event, postTarget)" class="md-icon-button {{$root.meusPets.adocao[postTarget.id]?'red-icon':'white-icon'}}" aria-label="Favorite">
+              <i class="material-icons">favorite</i>
+                <!-- <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon> -->
+            </md-button>
+            <md-button ng-click="adicionarAosFavoritos(postTarget)" class="md-icon-button  {{$root.meusPets.favoritos[postTarget.id]?'yellow-icon':'white-icon'}}" aria-label="Share">
+              <!-- <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon> -->
+              <i class="material-icons">star</i>
+            </md-button>
+          <md-button style="color:#fff" ng-click="navegar('prev')">Voltar</md-button>
+          <md-button  style="color:#fff" ng-click="navegar('next')">Continuar</md-button>
+          </md-card-icon-actions>
+        </md-card-actions>
+        <md-card-content>
+          <p>
+            {{postTarget.desc}}
+          </p>
+
+          <md-button ng-show="!exibirPostCompleto" ng-click="exibirPostCompleto=!exibirPostCompleto">Ver mais...</md-button>
+          
+        </md-card-content>
+        <img style="border-top: solid 10px #c5c5c5" ng-if="exibirPostCompleto" ng-repeat="img in postTarget.arr_imgs" ng-src="{{img}}" class="md-card-image" alt="Washed Out">
+
+      </md-card>
+    </div>
+  </md-content>
